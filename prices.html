@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цены и тарифы</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #0056b3;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background: #007bff;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9ff;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 25px;
+      font-style: italic;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #007bff;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Цены и тарифы</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="orders.html">Принять заказы</a>
+    <a href="places.html">Популярные места</a>
+    <a href="carinfo.html">Машина</a>
+    <a href="prices.html">Цены</a>
+  </nav>
+
+  <div class="container">
+    <h2>Тарифы на поездки</h2>
+
+    <table>
+      <tr>
+        <th>Маршрут</th>
+        <th>Расстояние</th>
+        <th>Цена (KZT)</th>
+      </tr>
+      <tr>
+        <td>По городу</td>
+        <td>До 10 км</td>
+        <td>50000₸</td>
+      </tr>
+      <tr>
+        <td>По городу</td>
+        <td>10–30 км</td>
+        <td>100000 ₸</td>
+      </tr>
+      <tr>
+        <td>Трансфер в аэропорт</td>
+        <td>До 10 км</td>
+        <td>25000 ₸</td>
+      </tr>
+      <tr>
+        <td>Межгород (Алматы → Конаев)</td>
+        <td>~75 км</td>
+        <td>80000₸</td>
+      </tr>
+      <tr>
+        <td>Почасовая аренда</td>
+        <td>Минимум 1 часа</td>
+        <td>8500 ₸ / час</td>
+      </tr>
+    </table>
+
+    <p class="note">*Цены могут меняться в зависимости от времени суток, количества пассажиров и условий поездки.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Тарифы — Мединов Владик
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Приём заказов</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #0056b3;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #007bff;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #007bff;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Приём заказов</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="orders.html">Принять заказы</a>
+    <a href="places.html">Популярные места</a>
+    <a href="carinfo.html">Машина</a>
+    <a href="prices.html">Цены</a>
+  </nav>
+
+  <div class="container">
+    <h2>Оформить заказ</h2>
+
+    <form onsubmit="sendWhatsApp(); return false;">
+      <label for="name">Имя клиента:</label>
+      <input type="text" id="name" placeholder="Введите имя" required>
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+
+      <label for="from">Откуда:</label>
+      <input type="text" id="from" placeholder="Например: Алматы, центр" required>
+
+      <label for="to">Куда:</label>
+      <input type="text" id="to" placeholder="Например: Аэропорт" required>
+
+      <label for="date">Дата и время:</label>
+      <input type="datetime-local" id="date" required>
+
+      <label for="comment">Комментарий:</label>
+      <textarea id="comment" rows="3" placeholder="Дополнительная информация"></textarea>
+
+      <button type="submit">Отправить заказ</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Приём заказов — Мединов Владик
+  </footer>
+
+  <script>
+  function sendWhatsApp() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const from = document.getElementById('from').value.trim();
+    const to = document.getElementById('to').value.trim();
+    const date = document.getElementById('date').value.trim();
+    const comment = document.getElementById('comment').value.trim();
+
+    if (!name || !phone || !from || !to || !date) {
+      alert("⚠️ Пожалуйста, заполните все поля!");
+      return;
+    }
+
+    // Номер водителя (БЕЗ +, пробелов и скобок)
+    const driverNumber = "77026684877"; 
+
+    const message =
+      ` *Новый заказ*%0A` +
+      ` Имя: ${name}%0A` +
+      ` Телефон клиента: ${phone}%0A` +
+      ` Откуда: ${from}%0A` +
+      ` Куда: ${to}%0A` +
+      ` Дата и время: ${date}%0A` +
+      ` Комментарий: ${comment || "нет"}%0A`;
+
+    const url = `https://wa.me/${driverNumber}?text=${message}`;
+    window.open(url, "_blank");
+  }
+  </script>
+</body>
+</html>
